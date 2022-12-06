@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorizeGuard } from '../api-authorization/authorize.guard';
 import { HomeComponent } from './home/home.component';
-import { TokenComponent } from './token/token.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
 export const routes: Routes = [

@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { TokenComponent } from './token/token.component';
 
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
@@ -27,7 +26,6 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    TokenComponent,
     LoginPageComponent
   ],
   imports: [
