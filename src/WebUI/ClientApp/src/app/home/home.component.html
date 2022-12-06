@@ -1,0 +1,28 @@
+<ng-container *ngIf="userRole == 'User'">
+  <div class="d-flex justify-content-start flex-column">
+    <div>
+      <h3 class="">Balances as of {{currentHeaderText}}</h3>
+    </div>
+    <div class="d-flex justify-content-start">
+      <ng-container *ngIf="accountList">
+        <div *ngFor="let item of accountList" class="card spacing" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{item.accountName}}</h5>
+            <p class="card-text">Rs. {{item.balance}}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="userRole == 'Administrator'">
+  <div>
+    <h3>Upload page</h3>
+  </div>
+  <div class="d-flex justify-content-start">
+    <input type="file" mat-raised-button color="primary" style="margin: 5px;" (change)="performUpload($event)" />
+    <button mat-raised-button color="primary" style="margin: 5px;" (click)="completeUpload()">Upload</button>
+  </div>
+</ng-container>

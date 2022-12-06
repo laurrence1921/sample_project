@@ -1,0 +1,53 @@
+<!--<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+
+      <ng-container class="card px-5 py-5" [formGroup]="loginForm">
+          <div class="form-data">
+            <div class="forms-inputs mb-4">
+              <span>Email or username</span>
+              <input formControlName="email" autocomplete="off" type="text">
+              <div class="invalid-feedback">A valid email is required!</div>
+            </div>
+            <div class="forms-inputs mb-4">
+              <span>Password</span>
+              <input autocomplete="off" formControlName="password" type="password">
+              <div class="invalid-feedback">Password must be 8 character!</div>
+            </div>
+            <div class="mb-3">
+              <button (click)="performLogin()" class="btn btn-dark w-100">Login</button>
+            </div>
+          </div>-->
+          <!--<div class="success-data" v-else>
+      <div class="text-center d-flex flex-column"> <i class='bx bxs-badge-check'></i> <span class="text-center fs-1">You have been logged in <br> Successfully</span> </div>
+    </div>-->
+      <!--</ng-container>
+    </div>
+  </div>
+</div>-->
+<mat-card class="col-12 col-sm-5 mat-elevation-z5">
+  <form [formGroup]="loginForm">
+    <h3 style="color: #283593; text-align: center">Sign In</h3>
+    <div fxLayout="column" class='mt-4'>
+      <mat-form-field class="full-width">
+        <mat-label>
+          <mat-icon>email</mat-icon>
+          Username
+        </mat-label>
+        <input placeholder="Email" formControlName="email" matInput required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>
+          Password
+        </mat-label>
+        <input placeholder="Password" matInput formControlName="password" type="password" required>
+      </mat-form-field>
+      <div class="full-width" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button fxFlex="40" mat-raised-button color="primary" style="margin: 5px;"
+                (click)="performLogin()">
+          Sign in
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>
