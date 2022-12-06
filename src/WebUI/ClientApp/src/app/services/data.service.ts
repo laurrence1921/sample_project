@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 
@@ -20,22 +20,7 @@ export class DataService {
         return token ? token : '';
     }
 
-    public getImage(url: string): Observable<any> {
-        return Observable.create((observer: any) => {
-            const req = new XMLHttpRequest();
-            req.open('get', url);
-            req.onreadystatechange = function () {
-                if (req.readyState === 4 && req.status === 200) {
-                    observer.next(req.response);
-                    observer.complete();
-                }
-            };
-
-            const token = localStorage.getItem('token');
-            req.setRequestHeader('AccessToken', token);
-            req.send();
-        });
-    }
+    
 
     public get<T>(url: string, params?: any): Observable<T> {
         return this.http.get<T>(url, { params: this.buildUrlSearchParams(params), headers: { 'AccessToken': this.createAuthorizationHeader() } });
